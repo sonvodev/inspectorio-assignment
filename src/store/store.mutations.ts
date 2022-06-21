@@ -1,8 +1,11 @@
-import { ActivityStatus } from '../common/enums';
+import { ActivityStatus } from "../common/enums";
 
 export class StoreMutations<State> {
-
-  resetStateOfReducer<T>(state: State & { [key: string]: any }, key: keyof (T), intialPayload: any) {
+  resetStateOfReducer<T>(
+    state: State & { [key: string]: any },
+    key: keyof T,
+    intialPayload: any
+  ) {
     return {
       ...state,
       [key]: {
@@ -10,12 +13,12 @@ export class StoreMutations<State> {
         activity: ActivityStatus.NoActivity,
         error: null,
         version: new Date().getTime(),
-        ...intialPayload
+        ...intialPayload,
       },
     };
   }
 
-  setLoading<T>(state: State & { [key: string]: any }, key: keyof (T)) {
+  setLoading<T>(state: State & { [key: string]: any }, key: keyof T) {
     return {
       ...state,
       [key]: {
@@ -29,8 +32,8 @@ export class StoreMutations<State> {
 
   setError<T, TError = {}>(
     state: State & { [key: string]: any },
-    key: keyof (T),
-    error: TError | null,
+    key: keyof T,
+    error: TError | null
   ) {
     return {
       ...state,
@@ -43,7 +46,7 @@ export class StoreMutations<State> {
     };
   }
 
-  setLoaded<T>(state: State & { [key: string]: any }, key: keyof (T)) {
+  setLoaded<T>(state: State & { [key: string]: any }, key: keyof T) {
     return {
       ...state,
       [key]: {

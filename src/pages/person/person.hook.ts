@@ -23,14 +23,21 @@ const usePersonHook = (username: string) => {
 
   useEffect(() => {
     if (!isLoading && personState.payload!.login !== username) {
-      setLoading(true);
       fetchPersonalInformation();
     }
   }, [username]);
 
   useEffect(() => {
-    setLoading(personState.payload!.login === undefined);
-  }, [isLoading]);
+    console.log(personState.activity);
+
+    if (personState.activity === ActivityStatus.Loading) {
+      setLoading(true);
+    } else {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    }
+  }, [username, personState.activity]);
 
   /**
    * Handle go back to home page

@@ -11,12 +11,10 @@ function App() {
     <div className="App">
       <ErrorBoundary>
         <Suspense fallback={<div>Loading...</div>}>
-          <section>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/person/:username" element={<PersonPage />} />
-            </Routes>
-          </section>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/person/:username" element={<PersonPage />} />
+          </Routes>
         </Suspense>
       </ErrorBoundary>
     </div>
