@@ -1,0 +1,21 @@
+.HomePage {
+  color: blue;
+  &__guideline {
+    color: #4a4a4a;
+  }
+  &__users {
+    margin: 0 auto;
+    margin-top: 1rem;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+  &__users-button {
+    a {
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
