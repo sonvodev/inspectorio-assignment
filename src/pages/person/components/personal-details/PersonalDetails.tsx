@@ -1,5 +1,4 @@
 import { Avatar, CardHeader } from '@mui/material';
-import { } from './personal-details.hook';
 import { PersonalDetailsProps } from './personal-details.props';
 
 const PersonalDetails: React.FC<PersonalDetailsProps> = ({ avatarUrl, isLoading, location, name }: PersonalDetailsProps) => {
