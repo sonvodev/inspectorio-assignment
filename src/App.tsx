@@ -2,9 +2,9 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/error-boundary/ErrorBoundary';
-import HomePage from './pages/home/Home';
-import PersonPage from './pages/person/Person';
 
+const HomePage = React.lazy(() => import('./pages/home/Home'))
+const PersonPage = React.lazy(() => import('./pages/person/Person'))
 
 function App() {
   return (
